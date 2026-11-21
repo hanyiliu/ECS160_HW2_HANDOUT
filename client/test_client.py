@@ -9,7 +9,7 @@ def mock_moderation_response(result):
     return response
 
 
-def test_passing_post_is_printed_with_hashtag(capsys):
+def test_passing_post_work(capsys):
     post = main.Post("c0", "alice", "url", "t", "Posted", 0, 5)
 
     with patch.object(main.requests, "post", return_value=mock_moderation_response("#post")) as mock_post:
@@ -19,7 +19,7 @@ def test_passing_post_is_printed_with_hashtag(capsys):
     assert mock_post.call_args.kwargs["json"] == {"post_content": "Posted"}
 
 
-def test_failed_post_is_printed_as_deleted(capsys):
+def test_failed_post_deletes(capsys):
     post = main.Post("c0", "bob", "url", "t", "Crypto here!", 0, 5)
 
     with patch.object(main.requests, "post", return_value=mock_moderation_response("FAILED")):
