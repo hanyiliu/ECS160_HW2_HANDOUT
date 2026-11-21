@@ -1,4 +1,3 @@
-"""Unit tests for the hashtagging service. Gemini is mocked, so no API key or network is needed."""
 from unittest.mock import MagicMock, patch
 
 import hashtagging_pb2
