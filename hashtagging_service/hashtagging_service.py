@@ -9,7 +9,7 @@ import hashtagging_pb2
 import hashtagging_pb2_grpc
 
 # Configure Gemini
-MODEL = "gemini-2.0-flash"
+MODEL = "gemini-3.5-flash"
 PORT = 50051
 DEFAULT = "#bskypost"
 
